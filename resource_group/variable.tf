@@ -19,3 +19,11 @@ variable "rg_location2" {
     default = "West US"
     type = string
 }
+variable "rg_name3" {
+    default = "my-rg3"
+    type = string
+}
+variable "rg_location3" {
+    default = "Central US"
+    type = string
+}
