@@ -2,14 +2,14 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "4.27.0"
+      version = "4.46.0"
     }
   }
 backend "azurerm" {
-   resource_group_name = " Rg_123"
+    resource_group_name  = "Rg_123"
     storage_account_name = "storageccount123"                              # Can be passed via `-backend-config=`"storage_account_name=<storage account name>"` in the `init` command.
     container_name       = "count123"                               # Can be passed via `-backend-config=`"container_name=<container name>"` in the `init` command.
-    key                  =  "pro.terraform.tfstate"
+    key                  = "prode.terraform.tfstate"
 }
 }
 provider "azurerm" {
