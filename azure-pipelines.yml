@@ -1,0 +1,34 @@
+trigger: none
+pool: Agent_1
+steps:
+  - 
+- task: TerraformTask@5
+  displayName: Terraform init
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)\resource_group'
+    backendServiceArm: 'new_serv'
+    backendAzureRmOverrideSubscriptionID: 'aa50dcb0-04de-41e4-bb3e-260e54d18bec'
+    backendAzureRmResourceGroupName: 'Rg_123'
+    backendAzureRmStorageAccountName: 'storageccount123'
+    backendAzureRmContainerName: 'count123'
+    backendAzureRmKey: 'pro.terraform.tfstate'
+
+- task: TerraformTask@5
+  displayName: terraformplan
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    workingDirectory: '$(System.DefaultWorkingDirectory)\resource_group'
+    environmentServiceNameAzureRM: 'new_serv'
+    environmentAzureRmOverrideSubscriptionID: 'aa50dcb0-04de-41e4-bb3e-260e54d18bec'
+
+- task: TerraformTask@5
+  displayName: Terraformapply
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory)\resource_group'
+    environmentServiceNameAzureRM: 'new_serv'
+    environmentAzureRmOverrideSubscriptionID: 'aa50dcb0-04de-41e4-bb3e-260e54d18bec'
