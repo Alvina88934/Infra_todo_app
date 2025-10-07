@@ -1,7 +1,6 @@
 trigger: none
 pool: Agent_1
 steps:
-  - 
 - task: TerraformTask@5
   displayName: Terraform init
   inputs:
@@ -11,9 +10,9 @@ steps:
     backendServiceArm: 'new_serv'
     backendAzureRmOverrideSubscriptionID: 'aa50dcb0-04de-41e4-bb3e-260e54d18bec'
     backendAzureRmResourceGroupName: 'Rg_123'
-    backendAzureRmStorageAccountName: 'storageccount123'
+    backendAzureRmStorageAccountName: 'storageaccount123'
     backendAzureRmContainerName: 'count123'
-    backendAzureRmKey: 'pro.terraform.tfstate'
+    backendAzureRmKey: 'prod.terraform.tfstate'
 
 - task: TerraformTask@5
   displayName: terraformplan
